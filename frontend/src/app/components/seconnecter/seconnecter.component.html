@@ -1,0 +1,50 @@
+
+  <section id="card" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <div class="container">
+        <div class="description-leçon">
+          <p><B>SE CONNECTER</B></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div id="body">
+  <div class="Login">
+    <div class="row show-hide-message">
+      <div [ngClass]="messageClass">
+        {{ message }}
+      </div>
+    </div>
+    <form [formGroup]="form" (submit)="onLoginSubmit()">
+      <div class="form-group">
+        <label for="email"><h4><b>Email</b></h4></label>
+        <div >
+          <input class="form-control" [ngClass]="{'is-invalid': form.controls.email.errors && form.controls.email.dirty,
+           'is-valid': form.controls.email.valid && form.controls.email.dirty }"
+          type="text" name="email" formControlName="email" />
+          <ul class="invalid-feedback">
+            <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">Ce champ est obligatoire.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password"><h4><b>Mot de passe</b></h4></label>
+        <div >
+          <input class="form-control" [ngClass]="{'is-invalid': form.controls.password.errors && form.controls.password.dirty,
+          'is-valid': form.controls.password.valid && form.controls.password.dirty }"
+           type="password" name="password" formControlName="password" />
+          <ul class="invalid-feedback">
+            <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required.</li>
+          </ul>
+        </div>
+      </div>
+
+      <input [disabled]= "!form.valid || processing" class="btn btn-primary" type="submit" value="Se connecter" />
+    </form>
+
+
+  </div>
+</div>
+
+

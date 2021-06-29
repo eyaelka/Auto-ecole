@@ -1,0 +1,129 @@
+
+  <section id="card" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <div class="container">
+        <div class="description-leçon">
+          <p><B>S'INSCRIRE</B></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>
+
+<div id="body">
+  <div class="Register">
+     <!-- Registration Form -->
+<form [formGroup]="form" (submit)="onRegisterSubmit()">
+
+  <!-- Username Input -->
+  <div class="form-group">
+    <label for="username"><h4><b>Nom utilisateur</b></h4></label>
+    <div >
+      <input type="text" name="username"
+      class="form-control" [ngClass]="{'is-invalid': (form.controls.username.errors && form.controls.username.dirty) || (!usernameValid && form.controls.username.dirty),
+       'is-valid': !form.controls.username.errors && usernameValid}" autocomplete="off" placeholder="*Nom utilisateur" formControlName="username"  (blur)="checkUsername()"/>
+      <!-- Validation -->
+      <ul class="invalid-feedback">
+        <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty" >Ce champ est obligatoire !</li>
+        <li *ngIf="form.controls.username.errors?.minlength && form.controls.username.dirty || form.controls.username.errors?.maxlength && form.controls.username.dirty ">Caractères minimum: 3</li>
+        <li *ngIf="form.controls.username.errors?.validateUsername && form.controls.username.dirty" >Le nom d'utilisateur ne doit pas comporter de caractères spéciaux</li>
+        <li *ngIf="usernameMessage">{{ usernameMessage }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!--Birth INPUT-->
+  <div class="form-group">
+    <label for="birth"><h4><b>Date de naissance</b></h4></label>
+
+    <input type="date"  name="birth" class="form-control"  formControlName="birth" >
+  </div>
+
+
+
+  <!-- Email Input -->
+  <div class="form-group">
+    <label for="email"><h4><b>Email</b></h4></label>
+    <div >
+      <input type="text" name="email"
+       class="form-control" [ngClass]="{'is-invalid': (form.controls.email.errors && form.controls.email.dirty)  || (!emailValid && form.controls.email.dirty),
+       'is-valid': !form.controls.email.errors && emailValid}" autocomplete="off" placeholder="*Email" formControlName="email" (blur)="checkEmail()" />
+      <!-- Validation -->
+      <ul class="invalid-feedback">
+        <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">Ce champ est obligatoire !</li>
+        <li *ngIf="(form.controls.email.errors?.minlength && form.controls.email.dirty || form.controls.email.errors?.maxlength && form.controls.email.dirty ) && form.controls.email.dirty">Caractères minimum: 5, Nombre maximum de caractères: 30</li>
+        <li *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty">Adresse électronique invalide</li>
+        <li *ngIf="emailMessage">{{ emailMessage}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Password Input -->
+  <div class="form-group">
+    <label for="password"><h4><b>Mot de passe</b></h4></label>
+    <div >
+      <input type="password" name="password"
+      class="form-control" [ngClass]="{'is-invalid':(form.controls.password.errors && form.controls.password.dirty),
+      'is-valid': !form.controls.password.errors}" autocomplete="off" placeholder="*Mot de passe" formControlName="password"/>
+      <!-- Validation-->
+      <ul class="invalid-feedback">
+        <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">Ce champ est obligatoire !</li>
+        <li *ngIf="form.controls.password.errors?.minlength && form.controls.password.dirty || form.controls.password.errors?.maxlength && form.controls.password.dirty ">Caractères minimum: 8</li>
+        <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty"> minimum 8 caractères: au moins un caractère et un chiffre</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- Confirm Password Input -->
+  <div class="form-group">
+    <label for="confirm"><h4><b>Confirmer mot de passe</b></h4></label>
+    <div >
+      <input type="password" name="confirm"
+      class="form-control" [ngClass]="{'is-invalid': (form.controls.confirm.errors && form.controls.confirm.dirty) || (form.errors?.matchingPasswords && form.controls.confirm.dirty),
+       'is-valid': !form.controls.confirm.errors && !form.errors?.matchingPasswords}" autocomplete="off" placeholder="*Confirmer mot de passe" formControlName="confirm" />
+      <!-- Validation -->
+      <ul class="invalid-feedback">
+        <li *ngIf="form.controls.confirm.errors?.required && form.controls.confirm.dirty">Ce champ est obligatoire !</li>
+        <li *ngIf="form.errors?.matchingPasswords && form.controls.confirm.dirty">les mots de passe ne correspondent pas</li>
+      </ul>
+    </div>
+  </div>
+
+
+<!-- Phone Input -->
+<div class="form-group">
+  <label for="phone"><h4><b>Télephone</b></h4></label>
+  <div >
+    <input type="text" name="phone"
+    class="form-control" [ngClass]="{'is-invalid':(form.controls.phone.errors && form.controls.phone.dirty),
+    'is-valid': !form.controls.phone.errors}" autocomplete="off" placeholder="*Télephone" formControlName="phone" />
+     <!-- Validation-->
+     <ul class="invalid-feedback">
+      <li *ngIf="form.controls.phone.errors?.required && form.controls.phone.dirty">Ce champ est obligatoire !</li>
+      <li *ngIf="form.controls.phone.errors?.minlength && form.controls.phone.dirty ">Caractères minimum: 8</li>
+      <li *ngIf="form.controls.phone.errors?.validatePhone && form.controls.phone.dirty">Numéro invalid</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+  <!-- Submit Input -->
+  <input [disabled] = "processing || !emailValid || !usernameValid" type="submit" class="btn btn-primary" value="S'inscrire" />
+
+</form>
+<!-- Registration Form /-->
+
+</div>
+
+  </div>

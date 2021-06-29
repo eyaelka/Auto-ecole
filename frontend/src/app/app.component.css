@@ -1,0 +1,14 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+h1, h2, h3,h4 {
+  font-family: "Raleway", sans-serif;
+}

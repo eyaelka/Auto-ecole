@@ -1,0 +1,134 @@
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex justify-content-center align-items-center">
+  <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+    <h1>Bienvenue,</h1>
+    <h2>Réussir votre permis de conduire chez votre auto-école preferée</h2>
+    <a *ngIf= "!authService.isLoggedIn()" class="btn-login" routerLink=  "seconnecter">Se connecter</a>
+  </div>
+</section><!-- End Hero -->
+
+<!-- ======= info Section ======= -->
+<div class="process">
+  <section id="info" class="info">
+    <div class="container" data-aos="fade-up">
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member ">
+            <img class="img-responsive image-resize" src="../../../assets/images/larning.png" class="img-fluid" alt="">
+            <div class="member-content">
+              <h4>Réussir votre code</h4>
+              <p>Entraînez-vous au Code de la route intégralement en ligne ou dans notre agence.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member">
+            <img class="img-responsive image-resize" src="../../../assets/images/permis.png" class="img-fluid" alt="">
+            <div class="member-content">
+              <h4>Passez à la conduite</h4>
+              <p>Planifier vos horaires de conduite avec votre moniteur .</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member">
+            <img class="img-responsive image-resize" src="../../../assets/images/reussir.png" class="img-fluid" alt="">
+            <div class="member-content">
+              <h4>Félicitation !</h4>
+              <p>La réussite frappe toujours à la porte de ceux qui le méritent .</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="about">
+  <h5>Auto-écoleCH vous propose une révision complète de l'examen théorique en ligne !</h5>
+</div>
+
+
+
+<section id="card" class="d-flex justify-content-center align-items-center">
+  <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 descriptionbox">
+          <p class="descriptioncontent">Nous vous proposons une formation complète afin de décrocher votre permis et ce, quelle que soit la catégorie : Permis B, Permis E, Permis moto...
+            Tous les cours et les tests proposés sont développés sur la base de l'examen que vous allez passer ; ils abordent tous les thématiques : la signalisation, la visibilité et l'éclairage, le croisement, les ronds-points, le dépassement, l'équipement du véhicule, l'arrêt et le stationnement.
+          </p>
+        </div>
+        <div class="col-xl-6 ">
+          <img class="auto" src="../../../assets/images/accueil.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="codedescription">
+      <h2>Code de la route</h2>
+      <p><i class="fas fa-check"></i>&nbsp;&nbsp;+2500 questions officielles, cours, vidéos, tests et examens blancs</p>
+      <p><i class="fas fa-check"></i>&nbsp;&nbsp;Live avec une le responsable de l'auto-école chaque semaine</p>
+      <p><i class="fas fa-check"></i>&nbsp;&nbsp;Suivi progression et support en ligne</p>
+      <p><i class="fas fa-check"></i>&nbsp;&nbsp;Réservation en ligne pour une place à l'examen </p>
+      <p><i class="fas fa-check"></i>&nbsp;&nbsp;Passez l'examen du code dans moins d'un mois</p>
+      <a *ngIf= "!authService.isLoggedIn()" class="btn-login" routerLink=  "seconnecter">J'apprends le code</a>
+    </div>
+
+  </div>
+  <div class="col-sm-4"><img class="revimg" src="../../../assets/images/rev.png" alt=""></div>
+</div>
+<div class="conddescription">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img class="condimg" src="../../../assets/images/cond.png" alt="">
+      </div>
+      <div class="col">
+        <h2>Code de la route</h2>
+        <p><i class="fas fa-check"></i>&nbsp;&nbsp;Trouvez un enseignant proche de chez vous </p>
+        <p><i class="fas fa-check"></i>&nbsp;&nbsp;Paiement en espèce</p>
+        <p><i class="fas fa-check"></i>&nbsp;&nbsp;Plusieurs points de rendez-vous partout , en Tunisie</p>
+        <p><i class="fas fa-check"></i>&nbsp;&nbsp;Flexibilité : Conduisez de 7h à 22h</p>
+        <p><i class="fas fa-check"></i>&nbsp;&nbsp;Réservation en ligne pour une place à l'examen </p>
+        <a *ngIf= "!authService.isLoggedIn()" class="btn-login" routerLink=  "seconnecter">Je passe le permis</a>
+      </div>
+
+    </div>
+
+</div>
+
+<div class="cardfoot" >
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>Une question ?</h1> <br>
+            <h1>Plus d'informations ?</h1>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"><b>Email :</b></label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nom@gmail.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"><b>Message</b></label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Saisissez votre Message"></textarea>
+            </div>
+            <a  class="btn-contact" routerLink=  "#">Envoyer </a>
+           </div>
+
+          </div>
+        </div>
+
+    </div>
+</div>
